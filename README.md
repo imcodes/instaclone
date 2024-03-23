@@ -17,21 +17,29 @@ npm run dev
 ```
 
 but if you wish to contribute to this project and want to work add your own code, then, you will need to run the following command
-```npm run watch```
+```
+npm run watch
+```
 
 ### 3. Install the the laravel dependencies
 
 with the following command (Note: make sure you run this command on another terminal without closing the previous terminal)
-```composer install```
+```
+composer install
+```
 
 ### 4. Migrate your database
 
 You will need to install and migrate the database tables. with this you may need to update the .env file with your database credentials after which you will need to run the following command
 
-``` php artisan migrate ```
+``` 
+php artisan migrate
+ ```
 ### 5. start your server
 
-```php artisan serve```
+```
+php artisan serve
+```
 
 ### 6. Generate Laravel Key (Optional)
 
