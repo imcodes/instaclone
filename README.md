@@ -1,3 +1,4 @@
+<img src="screenshots/insta-clon login.png"/>
 # Insta-Clone
 
 ## A clone of the instagram
