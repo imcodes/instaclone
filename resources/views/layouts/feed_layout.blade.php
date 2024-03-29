@@ -14,8 +14,14 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @stack('header-script')
+        
 
         <!-- Styles -->
+        @stack('styles')
+        <!-- Animate css -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+        <link rel="stylesheet" href="{{asset('css/custom-css.css')}}">
         @livewireStyles
     </head>
     <body class="font-sans antialiased">
@@ -35,11 +41,50 @@
 
             <!-- Page Content -->
             <main {{$attributes->merge(['class'])}}>
-                {{ $slot }}
+            <div class="drawer lg:drawer-open">
+    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-col items-center justify-center dark:text-slate-200">
+        <!-- Page content here -->
+        {{ $slot }}
+        
+    </div> 
+    <div class="drawer-side px-4 w-12 border-opacity-5 border-e-2 border-gray-400">
+        <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label> 
+        
+        <!-- Sidebar content here -->
+        <x-sidebar/>
+    
+    </div>
+    </div>
             </main>
         </div>
 
         @stack('modals')
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+        <script src="{{asset('js/notify.js')}}"></script>
+        <script>
+            $.notify.defaults({
+                elementPosition: 'top center',
+                globalPosition: 'bottom left',
+            })
+            $.notify.addStyle('happyblue', {
+                html: "<div>☺<span data-notify-text/>☺</div>",
+                classes: {
+                    base: {
+                    "white-space": "nowrap",
+                    "background-color": "lightblue",
+                    "padding": "5px"
+                    },
+                    superblue: {
+                    "color": "white",
+                    "background-color": "blue"
+                    }
+                }
+                });
+        </script>
+
+        @stack('scripts')
 
         @livewireScripts
     </body>
