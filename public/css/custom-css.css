@@ -1,0 +1,23 @@
+.dropify-wrapper{
+    background: #0d0b15 !important;
+    border:none;
+
+    .dropify-message span.file-icon {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+}
+
+.media-preview{
+    aspect-ratio: 1/1;
+    max-height:30rem;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    
+}
+.media-preview > .preview-item{
+    background-clip: content-box;
+}
