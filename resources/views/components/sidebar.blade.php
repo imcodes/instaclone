@@ -14,7 +14,7 @@
             <li class="mt-3"><a href="#" class="flex gap-4"><x-svg name='chat'/> <span>Messages</span></a></li>
             <li class="mt-3"><a href="#" class="flex gap-4"><x-svg name='heart'/> <span>Notifications</span></a></li>
             <li class="mt-3"><a href="{{route('create.feed')}}" class="flex gap-4"><x-svg name='add'/> <span>Create</span></a></li>
-            <li class="mt-3"><a href="#" class="flex gap-4"><x-avater src="" styles="w-6 h-6"/> <span>Profile</span></a></li>
+            <li class="mt-3"><a href="{{route('profile.show')}}" class="flex gap-4"><x-avater src="" styles="w-6 h-6"/> <span>Profile</span></a></li>
         </ul>
     </div>
     

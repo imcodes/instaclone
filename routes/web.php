@@ -21,6 +21,10 @@ Route::get('/', function () {
 Route::get('/posts',[PostController::class,'showFeeds']);
 
 Route::middleware('auth')->prefix('feed')->group(function(){
+    Route::get('/dashboard',function(){
+        return redirect(route('feed'));
+    })->name('dashboard');
+    
     Route::get('/',[PostController::class,'showFeeds'])->name('feed');
 
     //create POST ROUTES
