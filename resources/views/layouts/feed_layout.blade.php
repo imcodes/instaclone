@@ -21,6 +21,9 @@
         @stack('styles')
         <!-- Animate css -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+
+        <!-- tailwind css -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/base.min.css">
         <link rel="stylesheet" href="{{asset('css/custom-css.css')}}">
         @livewireStyles
     </head>
@@ -31,7 +34,7 @@
            
 
             <!-- Page Heading -->
-            @if (isset($header))
+            @if (isset ($header))
                 <header class="bg-white dark:bg-gray-800 shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
@@ -43,12 +46,12 @@
             <main {{$attributes->merge(['class'])}}>
             <div class="drawer lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content flex flex-col items-center justify-center dark:text-slate-200">
+    <div class="drawer-content dark:text-slate-200">
         <!-- Page content here -->
         {{ $slot }}
         
     </div> 
-    <div class="drawer-side px-4 w-12 border-opacity-5 border-e-2 border-gray-400">
+    <div class="drawer-side light:bg-white light:text-dark border-opacity-15 border-r ">
         <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label> 
         
         <!-- Sidebar content here -->
@@ -61,6 +64,8 @@
 
         @stack('modals')
 
+        <!-- Tailwind css Js -->
+        <script src="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/lib/index.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
         <script src="{{asset('js/notify.js')}}"></script>
         <script>
