@@ -79,3 +79,21 @@
   scroll-snap-type: x mandatory;
   scroll-snap-align: center;
 }
+
+/* Comment Input styles */
+.comment-input-wrapper{
+   
+}
+
+.comment-input{
+    border:none;
+    background: transparent;
+    flex-grow: 2;
+    outline:none;
+}
+.comment-input-wrapper .comment-input:focus{
+    outline:none !important;
+    outline:0 !important;
+    outline-width: 0;
+    outline-style: hidden !important;
+}
