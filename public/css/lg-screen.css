@@ -1,0 +1,9 @@
+@media (min-width: 1024px) {
+    .lg\:block {
+        display: block;
+    }
+
+    .lg\:w-2\/3 {
+        width: 66.666667%;
+    }
+}

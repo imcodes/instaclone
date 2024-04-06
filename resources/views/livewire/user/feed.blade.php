@@ -1,13 +1,23 @@
-<x-feed-layout>
+@php
+use App\Http\Livewire\Feed\FeedItem;
+@endphp
+<x-feed-layout class="">
     <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-       <div class="grid lg:columns-12 grid-flow-col gap-4 px-4">
+       <div class="px-20 py-12" style="display:flex;">
             <!-- feed section -->
-            <div class="lg:col-span-7 border-slate-300 relative">
-                <x-story-slide class="overflow-hidden" style="width:100%;"/>
-                
+            <div class="flex flex-col items-center justify-center border-base-300 w-2/3  relative">
+                <x-story-slide class="story-slider no-scrollbar scroll-snap-x w-full mb-4 " style=""/>
+
+                <!-- FEED LOOPS -->
+               <div class="lg:w-2/3">
+                    @foreach($Posts as $Post)
+                    <!-- <x-feed-item post= key="{$Post->id}}"/> -->
+                    @livewire(FeedItem::class, ['post' => $Post], key($Post->id))
+                    @endforeach
+               </div>
             </div>
             <!-- Suggestions section -->
-            <div class="lg:col-span-5">
+            <div class="px-5 ml-6 hidden lg:block">
                 <x-follower-suggestions/>
 
             </div>

@@ -21,9 +21,7 @@ Route::get('/', function () {
 Route::get('/posts',[PostController::class,'showFeeds']);
 
 Route::middleware('auth')->prefix('feed')->group(function(){
-    Route::get('/',function(){
-        return view('livewire.user.feed');
-    })->name('feed');
+    Route::get('/',[PostController::class,'showFeeds'])->name('feed');
 
     //create POST ROUTES
     Route::get('/create',[PostController::class,'create'])->name('create.feed');
