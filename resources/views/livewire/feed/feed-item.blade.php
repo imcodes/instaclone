@@ -43,6 +43,7 @@
         <!-- Comments section -->
         <div class="feed-item-comment-box">
             
+            <livewire:comment post_id="{{$post->id}}" />
         </div>
 
 </div>

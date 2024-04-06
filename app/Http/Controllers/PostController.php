@@ -77,7 +77,7 @@ class PostController extends Controller
     }
 
     public function showFeeds(){
-        $Posts = Post::with('user')->get();
+        $Posts = Post::with('user')->orderBy('created_at','desc')->get();
         // $User = User::with('posts')->where('id',1)->first();
         return view('livewire.user.feed',compact('Posts'));
     }
