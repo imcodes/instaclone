@@ -11,13 +11,13 @@
         <div class="feed-item-media-wrapper">
             @php
             $media_type = pathinfo($post->media,PATHINFO_EXTENSION);
-            $img_exts = ['jpg','jpeg','gif','webp','pnh'];
+            $img_exts = ['jpg','jpeg','gif','webp','png'];
             $video_exts = ['mp4'];
             @endphp
             
-            @if(in_array($media_type, $img_exts))
+            @if(in_array(strtolower($media_type), $img_exts))
                 <img src="{{asset('/storage/feed/'.$post->media)}}" alt="{{$post->caption}}">
-            @elseif(in_array($media_type, $video_exts))
+            @elseif(in_array(strtolower($media_type), $video_exts))
                 <video controls src="{{asset('/storage/feed/'.$post->media)}}"></video>
             @endif
         </div>
