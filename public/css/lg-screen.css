@@ -6,4 +6,8 @@
     .lg\:w-2\/3 {
         width: 66.666667%;
     }
+
+    .lg\:col-span-6 {
+        grid-column: span 6 / span 6;
+    }
 }
