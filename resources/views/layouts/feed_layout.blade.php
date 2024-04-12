@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
 
         <!-- tailwind css -->
+        <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/base.min.css">
         <link rel="stylesheet" href="{{asset('css/custom-css.css')}}">
         @livewireStyles
@@ -68,6 +69,14 @@
         <script src="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/lib/index.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
         <script src="{{asset('js/notify.js')}}"></script>
+
+        @stack('scripts')
+
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+        @livewire('livewire-ui-modal')
+        @livewireScripts
+
         <script>
             $.notify.defaults({
                 elementPosition: 'top center',
@@ -88,9 +97,5 @@
                 }
                 });
         </script>
-
-        @stack('scripts')
-
-        @livewireScripts
     </body>
 </html>

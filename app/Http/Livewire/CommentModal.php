@@ -5,22 +5,17 @@ namespace App\Http\Livewire;
 use App\Models\Post;
 use App\Models\Comment as PostComment;
 use Livewire\Component;
-use Laravel\Jetstream\InteractsWithBanner;
+use LivewireUI\Modal\ModalComponent;
 
-class Comment extends Component
+class CommentModal extends ModalComponent
 {
-    use InteractsWithBanner;
-    protected $listeners = ['hideModal' => 'hideCommentModal'];
+
+    public $mediaExtensions;
     public $content; //form comment input
     // public $comment_user = auth()->user()->id;
     public $post_id;
     public $reply_to;
     public $user_id;
-
-
-    public $showCommentDialog = false;
-
-    public $mediaExtensions;
 
     public function postComment(){
         // $this->validate();
@@ -46,25 +41,6 @@ class Comment extends Component
         $this->user_id = auth()->user()->id;
        
     }
-
-    public function showCommentModal(){
-        // $this->emit('showCommentModal');
-        $this->showCommentDialog = true;
-    }
-
-    public function hideCommentModal(){
-        $this->showCommentDialog = false;
-    }
-
-    public function getPostMedia(){
-        $media = Post::find($this->post_id)->value('media');
-        $media_type = pathinfo($media,PATHINFO_EXTENSION);
-        return [
-            'filename' => $media,
-            'type' => "$media_type"
-        ];
-    }
-
     public function getComments(){
         $Post = Post::find($this->post_id);
         $Comment = PostComment::whereBelongsTo($Post,'post')->get();// with('user')->where('id',$this->post_id);
@@ -72,14 +48,12 @@ class Comment extends Component
         return $comments;
     }
 
-   
+    public function hideModal(){
+        $this->emit('hideModal');
+    }
 
     public function render()
     {
-        return view('livewire.comment')->with([
-            'Commenter'=>auth()->user(),
-            'Comments' => $this->getComments(),
-            'media' => $this->getPostMedia(),
-        ]);
+        return view('livewire.comment-modal');
     }
 }

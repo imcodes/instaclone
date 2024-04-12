@@ -1,5 +1,6 @@
 @import url(./lg-screen.css);
 @import url(./utility.css);
+@import url(./modal.css);
 .dropify-wrapper{
     background: #0d0b15 !important;
     border:none;
