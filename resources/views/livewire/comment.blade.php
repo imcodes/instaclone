@@ -1,10 +1,10 @@
 <div>
     {{--$Commenter->id--}}
-    @if(count($Comments) > 0)
+    @if($commentCount > 0)
      {{-- <button onclick="Livewire.emit('openModal', 'comment-modal')">view all {{count($Comments)}} comments</button> --}}
      {{-- <button wire:click="$emit('openModal', 'comment-modal')">view all {{count($Comments)}} comments</button>  --}}
     {{-- <button wire:click="$toggle('showingComments')">view all {{count($Comments)}} comments</button> --}}
-        <button wire:click="showCommentModal">view all {{count($Comments)}} comments</button>           
+        <button wire:click="showCommentModal">view all {{$commentCount}} comments</button>           
     @endif
     
     <form wire:submit = "postComment">
@@ -15,16 +15,9 @@
         </div>
     </form>
     @if($showCommentDialog) 
-     <livewire:comment-modal />
+     <livewire:comment-modal post_id="{{$post_id}}" :mediaExtensions="$mediaExtensions"/>
     @endif
 </div>
-
-{{-- @if($showCommentDialog)
-    @livewire('comment-modal', ['post_id' => $post_id, ], key($user->id))
-    <livewire:comment-modal :post_id = "$post_id" :user = "$user()" :wire:key="$post_id" />
-    <livewire:comment-modal />
-@endif --}}
-
 
 
 

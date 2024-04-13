@@ -3139,8 +3139,15 @@ html:has(.drawer-toggle:checked) {
 .border-transparent {
   border-color: transparent;
 }
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
 .border-opacity-15 {
   --tw-border-opacity: 0.15;
+}
+.border-opacity-20 {
+  --tw-border-opacity: 0.2;
 }
 .bg-gray-100 {
   --tw-bg-opacity: 1;
@@ -3413,6 +3420,9 @@ html:has(.drawer-toggle:checked) {
 .tracking-widest {
   letter-spacing: 0.1em;
 }
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
 .text-base-content {
   --tw-text-opacity: 1;
   color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
@@ -3484,6 +3494,10 @@ html:has(.drawer-toggle:checked) {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-indigo-500 {
+  --tw-text-opacity: 1;
+  color: rgb(99 102 241 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
