@@ -28,4 +28,7 @@ class Comment extends Model
     }
 
     // get comment replies
+    public function replies(){
+        return $this->hasMany(Comment::class,'reply_to','id');
+    }
 }

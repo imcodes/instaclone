@@ -23,6 +23,7 @@
                   <span>Upload a file</span>
                   <input id="file-upload" name="post-media" type="file" class="sr-only dropify"
                     data-allowed-file-extensions="jpg jpeg gif mp4 png webp"
+                    data-allowed-formats="portrait square"
                   >
                 </label>
               </div>

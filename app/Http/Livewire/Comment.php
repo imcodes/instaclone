@@ -65,11 +65,11 @@ class Comment extends Component
         ];
     }
 
-    public function getComments(){
+    public function getCommentCount(){
         $Post = Post::find($this->post_id);
-        $Comment = PostComment::whereBelongsTo($Post,'post')->get();// with('user')->where('id',$this->post_id);
-        $comments =  (!$Comment) ? [] : $Comment;
-        return $comments;
+        $count = PostComment::whereBelongsTo($Post,'post')->count();
+        // $comments =  (!$Comment) ? [] : $Comment;
+        return $count;
     }
 
    
@@ -78,7 +78,7 @@ class Comment extends Component
     {
         return view('livewire.comment')->with([
             'Commenter'=>auth()->user(),
-            'Comments' => $this->getComments(),
+            'commentCount' => $this->getCommentCount(),
             'media' => $this->getPostMedia(),
         ]);
     }
