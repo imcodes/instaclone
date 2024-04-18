@@ -4,7 +4,7 @@
     <div class="close-overlay" wire:click = 'hideModal'></div>
 
     <div class="action-bar"><button class="close-btn" wire:click = 'hideModal'> <x-svg name="close" /> </button></div>
-    
+
     <div class="modal-container">
         {{-- media section --}}
         <aside class="media-side">
@@ -24,7 +24,7 @@
                         <strong>{{ \Str::snake( $user->name ) }} <x-svg name="verified" styles="text-blue-500 inline" /></strong>
                     </div>
                     <p class="text-sm">Original sound</p>
-                    
+
 
                 </div>
                 <a href="#" class="menu">...</a>
@@ -43,12 +43,13 @@
                             <span>{{$Comment->created_at->diffForHumans()}}</span>
                             <span>reply to</span>
                         </div>
+                        @if(count($Comment->replies) > 0)
+                        <span wire:click="toggleReplyViews" class="reply-toggler"> --view {{count($Comment->replies)}} {{\Str::plural("reply",count($Comment->replies))}} -- </span>
+                        {{-- REPLIES --}}
+                        @endif
                     </div>
-
-                    {{-- REPLIES --}}
-
                     @if(count($Comment->replies) > 0)
-                        <ul class="comment-reply-wrapper">
+                        <ul class="comment-reply-wrapper @if($dnone == true) d-none @endif">
                             @foreach($Comment->replies as $Reply)
                                 <li class="comment-item ">
                                     <x-avater src="https://source.unsplash.com/random/500x500/?face" styles='w-9 h-9 rounded-full mr-2'></x-avater>
@@ -69,7 +70,7 @@
 
                 </li>
                 @endforeach
-                
+
             </ul>
         </aside>
     </div>

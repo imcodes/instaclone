@@ -18,6 +18,7 @@ class Comment extends Component
     public $user_id;
 
 
+
     public $showCommentDialog = false;
 
     public $mediaExtensions;
@@ -33,7 +34,7 @@ class Comment extends Component
             ])
         );
 
-    $this->content = null; //clear the comment 
+    $this->content = null; //clear the comment
     $this->banner('Comment Posted.');
     // return redirect(route('feed'));
 
@@ -44,7 +45,7 @@ class Comment extends Component
     {
         $this->post_id = $post_id;
         $this->user_id = auth()->user()->id;
-       
+
     }
 
     public function showCommentModal(){
@@ -72,7 +73,7 @@ class Comment extends Component
         return $count;
     }
 
-   
+
 
     public function render()
     {

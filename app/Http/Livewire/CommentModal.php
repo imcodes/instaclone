@@ -6,9 +6,9 @@ use App\Models\Post;
 use App\Models\Comment as PostComment;
 use App\Models\User;
 use Livewire\Component;
-use LivewireUI\Modal\ModalComponent;
+//use LivewireUI\Modal\ModalComponent;
 
-class CommentModal extends ModalComponent
+class CommentModal extends Component
 {
 
     public $mediaExtensions;
@@ -18,6 +18,8 @@ class CommentModal extends ModalComponent
     public $post_id;
     public $reply_to;
     public $user;
+
+    public $dnone = true;
 
     public function postComment(){
         // $this->validate();
@@ -30,7 +32,7 @@ class CommentModal extends ModalComponent
             ])
         );
 
-    $this->content = null; //clear the comment 
+    $this->content = null; //clear the comment
     $this->banner('Comment Posted.');
     // return redirect(route('feed'));
 
@@ -49,7 +51,7 @@ class CommentModal extends ModalComponent
             'filename' => $media,
             'type' => "$media_type"
         ];
-       
+
     }
 
     //get user method
@@ -74,7 +76,14 @@ return $comments;
         return view('livewire.comment-modal')->with([
             'comments' => $this->getComments(),
             'Media' => $this->postMedia
-            
+
         ]);
+    }
+    public function toggleReplyViews(){
+        if($this->dnone == false){
+             $this->dnone = true;
+        }else{
+             $this->dnone = false;
+        }
     }
 }

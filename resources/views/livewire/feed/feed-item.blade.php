@@ -15,7 +15,7 @@
            // $img_exts = ['jpg','jpeg','gif','webp','png'];
            // $video_exts = ['mp4'];
             @endphp
-            
+
             @if(in_array(strtolower($media_type), $this->mediaExtensions['image']))
                 <img src="{{asset('/storage/feed/'.$post->media)}}" alt="{{$post->caption}}">
             @elseif(in_array(strtolower($media_type), $this->mediaExtensions['video']))
@@ -43,7 +43,7 @@
 
         <!-- Comments section -->
         <div class="feed-item-comment-box">
-            
+
             <livewire:comment post_id="{{$post->id}}" :mediaExtensions="$mediaExtensions" :wire:key="$pid" />
         </div>
 

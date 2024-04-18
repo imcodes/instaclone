@@ -84,3 +84,16 @@
     grid-template-columns: 50px 1fr;
     padding-bottom:var(--small-padding);
 }
+.d-none{
+    display: none;
+}
+.reply-toggler{
+    cursor: pointer;
+}
+.outline{
+    outline: auto;
+}
+ul.comment-reply-wrapper {
+    /* display: block; */
+    width: min(300px, 500px);
+}
