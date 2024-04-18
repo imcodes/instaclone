@@ -15,7 +15,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @stack('header-script')
-        
+
 
         <!-- Styles -->
         @stack('styles')
@@ -32,7 +32,7 @@
         <x-banner />
 
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-           
+
 
             <!-- Page Heading -->
             @if (isset ($header))
@@ -50,14 +50,14 @@
     <div class="drawer-content dark:text-slate-200">
         <!-- Page content here -->
         {{ $slot }}
-        
-    </div> 
+
+    </div>
     <div class="drawer-side light:bg-white light:text-dark border-opacity-15 border-r ">
-        <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label> 
-        
+        <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
+
         <!-- Sidebar content here -->
         <x-sidebar/>
-    
+
     </div>
     </div>
             </main>
@@ -73,8 +73,8 @@
         @stack('scripts')
 
         <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-        @livewire('livewire-ui-modal')
+{{--
+        @livewire('livewire-ui-modal') --}}
         @livewireScripts
 
         <script>
