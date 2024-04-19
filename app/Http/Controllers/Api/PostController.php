@@ -27,6 +27,8 @@ class PostController extends Controller
      * Display a Listing of resources with the comments and Enagagments
      */
     public function indexWithComments($limit = 10){
+
+       
         $post = Post::with(['user','comments'])->limit($limit)->get();
         return response($post);
     }
