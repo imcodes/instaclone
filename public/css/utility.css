@@ -1,0 +1,80 @@
+/* Padding Styles */
+/* Y - Paddings */
+.py-5 {
+    padding-top: 1.25rem/* 48px */;
+    padding-bottom: 1.25rem/* 48px */;
+}
+.py-12 {
+    padding-top: 3rem/* 48px */;
+    padding-bottom: 3rem/* 48px */;
+}
+
+/* X - paddings */
+.px-5 {
+    padding-left: 1.25rem/* 20px */;
+    padding-right: 1.25rem/* 20px */;
+}
+
+.px-12 {
+    padding-left: 3rem/* 48px */;
+    padding-right: 3rem/* 48px */;
+}
+
+.px-20 {
+    padding-left: 5rem/* 80px */;
+    padding-right: 5rem/* 80px */;
+}
+
+.px-32 {
+    padding-left: 8rem/* 128px */;
+    padding-right: 8rem/* 128px */;
+}
+
+.px-44 {
+    padding-left: 11rem/* 176px */;
+    padding-right: 11rem/* 176px */;
+}
+
+/* Width styles */
+.w-2\/5 {
+    width: 40%;
+}
+.w-2\/3 {
+    width: 66.666667%;
+}
+.w-2\/4 {
+    width: 50%;
+}
+.w-3\/4 {
+    width: 75%;
+}
+
+
+/* Scroll bar utility */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* GAP */
+.gap-5 {
+    gap: 1.25rem/* 20px */;
+}
+
+/* TEXT COLORS */
+
+.text-blue-500 {
+    --tw-text-opacity: 1;
+    color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+/* TEXT SIZES */
+.text-xl {
+    font-size: 1.25rem/* 20px */;
+    line-height: 1.75rem/* 28px */;
+}
